@@ -1,0 +1,35 @@
+<div id="sign-up">
+  <!-- <h1>
+    <i class="fas fa-money-check-alt"></i>
+  </h1> -->
+  <h1 class="log">
+    LOGIN
+  </h1>
+  <form (ngSubmit)="login()"[formGroup]="loginForm">
+    <div>
+      <input name="acno" formControlName="acno" type="text" placeholder="Account Number"><br><br>
+    </div>
+    <div *ngIf="this.loginForm.get('acno')?.touched&&this.loginForm.get('acno')?.errors" style="color:black;">Invalid Account Number</div>
+
+    <div>
+      <input  name="pswd" formControlName="pswd" type="password" placeholder="Password">
+
+    </div>
+    <div *ngIf="this.loginForm.get('pswd')?.touched&&this.loginForm.get('pswd')?.errors" style="color:black;">Invalid Password</div>
+
+    <div class="btn">
+      <button type="submit">Login</button>
+      <span id="p1">New User? Click here to <a routerLink="view register">Register</a>
+      </span>
+
+   
+    </div>
+        <!-- <button class="btn-new">Create new Account</button> -->
+        
+        <!-- <a href="#">Forgotten password?</a>
+        <a href="#">Register</a> 
+
+   -->
+  </form>
+  <img src="https://media.istockphoto.com/id/1334591614/photo/man-using-digital-tablet-online-connect-to-internet-banking-currency-exchange-online-shopping.jpg?b=1&s=170667a&w=0&k=20&c=uVgjqk6ZUldPjFOUX35vNMUzJZ6tz_IDV7apr1AWhII=" />
+</div>
